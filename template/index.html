@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style/style.css">
+
+    <style>
+         /* Remove arrows in Chrome, Safari, Edge */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button 
+        {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+         /* Remove arrows in Firefox */
+        input[type=number] 
+        {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+<div class="w-screen h-screen flex items-center justify-center">
+    <div class="w-full max-w-xl bg-white px-8 py-12 rounded shadow">
+      <h1 class="text-2xl font-bold text-black-600 text-center">Write your Iris Data</h1>
+
+      <form action="/predict" method="POST" class="mt-6 space-y-6">
+        <input type="number" name="sepal_length" step="0.1" required placeholder="sepal_length"
+               class="w-full text-center rounded p-2 border border-gray-300 focus:outline-none focus:ring-0  placeholder-gray-400 placeholder:italic">
+        <input type="number" name="sepal_width" step="0.1" required placeholder="sepal_width"
+               class="w-full text-center rounded p-2 border focus:outline-none focus:ring-0 border-gray-300 placeholder-gray-400 placeholder:italic">
+        <input type="number" name="petal_length" step="0.1" required placeholder="petal_length"
+               class="w-full text-center rounded p-2 border focus:outline-none focus:ring-0 border-gray-300 placeholder-gray-400 placeholder:italic">
+        <input type="number" name="petal_width" step="0.1" required placeholder="petal_width"
+               class="w-full text-center rounded p-2 border focus:outline-none focus:ring-0 border-gray-300 placeholder-gray-400 placeholder:italic">
+
+        <!-- reliable way to center button -->
+        <div class="w-full flex justify-center">
+          <button type="submit"
+                  class="bg-blue-500 border border-blue-500  hover:bg-transparent hover:text-blue-500 hover:border hover:border-blue-500 text-white font-bold py-2 px-6 rounded w-3/4 block">
+            Enter your number
+          </button>
+        </div>
+      </form>
+      <h1 class="text-xl font-bold text-blue-600 text-center mt-6">{{prediction}}</h1>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
